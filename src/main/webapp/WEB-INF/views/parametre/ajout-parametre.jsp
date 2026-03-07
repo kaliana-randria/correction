@@ -28,9 +28,9 @@
         <div class="mb-3">
             <label for="matiere" class="form-label">Matiere</label>
             <form:select path="matiere.id" cssClass="form-select" id="matiere">
-                <form:option value="" label="..."/>
+                <form:option value="" label="-- Choisir une matiere --"/>
                 <c:forEach var="matiere" items="${matieres}">
-                    <form:option value="${matiere.id}" label="${matiere.matiere}" />
+                    <form:option value="${matiere.id}" label="${matiere.nom}" />
                 </c:forEach>
             </form:select>
             <form:errors path="matiere.id" cssClass="text-danger"/>
@@ -45,7 +45,7 @@
         <div class="mb-3">
             <label for="operateur" class="form-label">Operateur</label>
             <form:select path="operateur.id" cssClass="form-select" id="operateur">
-                <form:option value="" label="..."/>
+                <form:option value="" label="-- Choisir un operateur --"/>
                 <c:forEach var="operateur" items="${operateurs}">
                     <form:option value="${operateur.id}" label="${operateur.nom}" />
                 </c:forEach>
@@ -56,7 +56,7 @@
         <div class="mb-3">
             <label for="resolution" class="form-label">Resolution</label>
             <form:select path="resolution.id" cssClass="form-select" id="resolution">
-                <form:option value="" label="..."/>
+                <form:option value="" label="-- Choisir une resolution --"/>
                 <c:forEach var="resolution" items="${resolutions}">
                     <form:option value="${resolution.id}" label="${resolution.nom}" />
                 </c:forEach>
