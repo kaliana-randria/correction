@@ -1,5 +1,7 @@
 package com.example.correction.entity;
 
+import java.time.LocalDate;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -16,7 +18,7 @@ public class Candidat {
     private String prenom;
 
     @Column(name = "dtn", nullable = false)
-    private String dtn;
+    private LocalDate dtn;
 
     @Column(name = "sexe", nullable = false)
     private String sexe;
@@ -45,20 +47,20 @@ public class Candidat {
         this.prenom = prenom;
     }
 
-    public String getDtn() {
-        return dtn;
-    }
-
-    public void setDtn(String dtn) {
-        this.dtn = dtn;
-    }
-
     public String getSexe() {
         return sexe;
     }
 
     public void setSexe(String sexe) {
         this.sexe = sexe;
+    }
+
+    public LocalDate getDtn() {
+        return dtn;
+    }
+
+    public void setDtn(LocalDate dtn) {
+        this.dtn = dtn;
     }
 
 }
