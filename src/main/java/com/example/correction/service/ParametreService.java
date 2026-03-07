@@ -1,0 +1,8 @@
+package com.example.correction.service;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class ParametreService {
+    
+}
