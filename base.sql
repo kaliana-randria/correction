@@ -12,7 +12,7 @@ CREATE TABLE candidat (
     sexe CHAR(1)
 );
 
-CREATE TABLE correction (
+CREATE TABLE correcteur (
     id SERIAL PRIMARY KEY,
     nom VARCHAR(100),
     prenom VARCHAR(100),
@@ -44,6 +44,7 @@ CREATE TABLE note (
     id SERIAL PRIMARY KEY,
     id_candidat INT REFERENCES candidat(id),
     id_matiere INT REFERENCES matiere(id),
+    id_correcteur INT REFERENCES correcteur(id),
     note NUMERIC(10,2)
 );
 
