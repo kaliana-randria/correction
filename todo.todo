@@ -2,10 +2,10 @@
 - creation base (conception)
  
 - CRUD (au moins anakiroa)
-    ✔ Matiere @done(26-03-07 14:55)
-        ✔ id @done(26-03-07 14:55)
-        ✔ matiere @done(26-03-07 14:55)
-        ✔ coeff @done(26-03-07 14:55)
+    ☐ Matiere
+        ☐ id
+        ☐ matiere
+        ☐ coeff
     - Candidat
         - id
         - nom
@@ -60,6 +60,7 @@
         - crud-resolution
         - crud-operateur
         - crud-parametre
+        - crud-note
         
         - difference-note
         - comparaison
