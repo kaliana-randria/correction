@@ -18,7 +18,7 @@ public class NoteFinalService {
     @Autowired
     private ComparaisonService comparaisonService;
 
-    public void appliquerResolution(double valiny, Parametre parametre, List<Note> notes, int candidatId,
+    public NoteFinal appliquerResolution(double valiny, Parametre parametre, List<Note> notes, int candidatId,
             int matiereId) {
 
         boolean condition = comparaisonService.verifierCondition(valiny, parametre);
@@ -35,7 +35,8 @@ public class NoteFinalService {
             nf.setMatiere(notes.get(0).getMatiere());
             nf.setValeur(noteFinal);
 
-            noteFinalRepository.save(nf);
+            return noteFinalRepository.save(nf);
         }
+        return null;
     }
 }

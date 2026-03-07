@@ -28,4 +28,8 @@ public class ParametreService {
     public void deleteById(int id) {
         parametreRepository.deleteById(id);
     }
+
+    public List<Parametre> findByMatiereId(int matiereId) {
+        return parametreRepository.findByMatiereId(matiereId);
+    }
 }
