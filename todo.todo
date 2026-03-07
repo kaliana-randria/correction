@@ -1,3 +1,53 @@
 - creation projet spring-boot
 - creation base (conception)
-- 
+ 
+- CRUD (au moins anakiroa)
+    - Matiere
+        - id
+        - matiere
+        - coeff
+    - Candidat
+        - id
+        - nom
+        - prenom
+        - dtn
+    - Correcteur
+        - id
+        - nom
+        - prenom
+        - dtn
+        - adresse
+        - cin
+    - Resolution
+        - id
+        - nom
+    - Operateur
+        - id
+        - operateur
+    - Parametre
+        - id
+        - id_matiere
+        - diff_seuil
+        - id_operateur
+        - id_resolution
+    - Note
+        - id
+        - id_candidat
+        - id_matiere
+        - id_correcteur
+        - note
+- Interface pour voir note finale matiere an'ilay candidat 
+    - idCandidat : en select
+    - idMatiere : en select
+    - bouton pour afficher note finale
+    - note finale : en affichage
+
+- Au moment calcul
+    - calcul difference (matiere an'ilay candidat) dans la table note
+        - alaina matiere et candidat
+        - isaina ny nbr note t@io matiere io
+        - jerena ny difference -> atao somme
+        - azo ny valiny
+    - comparaison du valiny @diff_seuil dans table parametre
+    - insertion note azo dans note finale
+        
