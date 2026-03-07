@@ -115,7 +115,7 @@ public class NoteController {
             mv.addObject("note", note);
             mv.addObject("candidats", candidatService.findAll());
             mv.addObject("matieres", matiereService.findAll());
-            mv.addObject("correteurs", correcteurService.findAll());
+            mv.addObject("correcteurs", correcteurService.findAll());
 
         } catch (Exception e) {
             redirectAttributes.addFlashAttribute("error", "Erreur : " + e.getMessage());
@@ -140,7 +140,7 @@ public class NoteController {
             mv.addObject("note", note);
             mv.addObject("candidats", candidatService.findAll());
             mv.addObject("matieres", matiereService.findAll());
-            mv.addObject("correteurs", correcteurService.findAll());
+            mv.addObject("correcteurs", correcteurService.findAll());
             mv.addObject("error", "Erreur lors de la modification : " + e.getMessage());
         }
 
