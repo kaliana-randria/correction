@@ -18,6 +18,10 @@ public class NoteFinalService {
     @Autowired
     private ComparaisonService comparaisonService;
 
+    public NoteFinal save(NoteFinal noteFinal) {
+        return noteFinalRepository.save(noteFinal);
+    }
+
     public NoteFinal appliquerResolution(double valiny, Parametre parametre, List<Note> notes, int candidatId,
             int matiereId) {
 
@@ -35,7 +39,7 @@ public class NoteFinalService {
             nf.setMatiere(notes.get(0).getMatiere());
             nf.setValeur(noteFinal);
 
-            return noteFinalRepository.save(nf);
+            return save(nf);
         }
         return null;
     }
