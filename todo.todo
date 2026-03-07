@@ -51,3 +51,16 @@
     - comparaison du valiny @diff_seuil dans table parametre
     - insertion note azo dans note finale
         
+
+- Dans git :
+    - creation feature 
+        - crud-matiere
+        - crud-candidat
+        - crud-correcteur
+        - crud-resolution
+        - crud-operateur
+        - crud-parametre
+        
+        - difference-note
+        - comparaison
+        - interface-note-final
