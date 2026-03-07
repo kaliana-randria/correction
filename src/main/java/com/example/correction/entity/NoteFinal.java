@@ -3,7 +3,9 @@ package com.example.correction.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "note_final")
+@Table(name = "note_final",
+    uniqueConstraints = @UniqueConstraint(columnNames = {"id_candidat", "id_matiere"})
+)
 public class NoteFinal {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
