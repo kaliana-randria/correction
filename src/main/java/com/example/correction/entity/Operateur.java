@@ -3,7 +3,7 @@ package com.example.correction.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "operation")
+@Table(name = "operateur")
 public class Operateur {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
