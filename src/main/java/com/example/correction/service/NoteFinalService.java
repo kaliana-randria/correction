@@ -22,6 +22,10 @@ public class NoteFinalService {
         return noteFinalRepository.save(noteFinal);
     }
 
+    public NoteFinal findByCandidatIdAndMatiereId(int candidatId, int matiereId) {
+        return noteFinalRepository.findByCandidatIdAndMatiereId(candidatId, matiereId);
+    }
+
     public NoteFinal appliquerResolution(double valiny, Parametre parametre, List<Note> notes, int candidatId,
             int matiereId) {
 

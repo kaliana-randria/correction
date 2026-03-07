@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface NoteFinalRepository extends JpaRepository<NoteFinal, Integer> {
+    NoteFinal findByCandidatIdAndMatiereId(int candidatId, int matiereId);
 }

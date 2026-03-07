@@ -3,7 +3,7 @@ package com.example.correction.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "note-final")
+@Table(name = "note_final")
 public class NoteFinal {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

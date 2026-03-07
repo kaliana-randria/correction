@@ -63,8 +63,14 @@ public class NoteFinalController {
         mv.addObject("matieres", matiereService.findAll());
 
         try {
-            List<Note> notes = noteRepository.findByCandidatIdAndMatiereId(candidatId, matiereId);
+            NoteFinal existante = noteFinalService.findByCandidatIdAndMatiereId(candidatId, matiereId);
+            if (existante != null) {
+                mv.addObject("noteFinal", existante);
+                mv.addObject("success", "La note finale existe déjà.");
+                return mv;
+            }
 
+            List<Note> notes = noteRepository.findByCandidatIdAndMatiereId(candidatId, matiereId);
             if (notes.isEmpty()) {
                 mv.addObject("error", "Aucune note trouvée.");
                 return mv;
