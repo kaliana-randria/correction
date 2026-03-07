@@ -20,6 +20,8 @@
                         <th>ID</th>
                         <th>Matiere</th>
                         <th>Coefficient</th>
+                        <th>Modifier</th>
+                        <th>Supprimer</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,8 +32,16 @@
                                     <td>${matiere.id}</td>
                                     <td>${matiere.matiere}</td>
                                     <td>${matiere.coeff}</td>
-                                    <td><a href="/matiere/modifier/${matiere.id}" class="btn btn-secondary">Modifier</a></td>
-                                    <td><a href="/matiere/supprimer/${matiere.id}" class="btn btn-danger">Supprimer</a></td>
+                                    <td>
+                                        <a href="${pageContext.request.contextPath}/matiere/modifier/${matiere.id}" class="btn btn-secondary">
+                                            Modifier
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="${pageContext.request.contextPath}/matiere/supprimer/${matiere.id}" class="btn btn-danger">
+                                            Supprimer
+                                        </a>
+                                    </td>
                                 </tr>
                             </c:forEach>
                         </c:when>
@@ -42,7 +52,7 @@
         </div>
 
         <div class="text-center mt-4">
-            <a href="/matiere/ajout-matiere" class="btn btn-success">Ajouter Matiere</a>
+            <a href="${pageContext.request.contextPath}/matiere/ajout-matiere" class="btn btn-success">Ajouter Matiere</a>
         </div>
     </div>
 

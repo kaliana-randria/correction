@@ -1,0 +1,34 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Modifier Matière</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Modifier une Matière</h2>
+
+    <form action="${pageContext.request.contextPath}/matiere/modifier" method="post">
+        
+        <input type="hidden" name="id" value="${matiere.id}" />
+
+        <div class="mb-3">
+            <label for="matiere" class="form-label">Nom de la matière</label>
+            <input type="text" class="form-control" id="matiere" name="matiere" value="${matiere.matiere}" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="coeff" class="form-label">Coefficient</label>
+            <input type="number" class="form-control" id="coeff" name="coeff" value="${matiere.coeff}" required>
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Enregistrer</button>
+            <a href="${pageContext.request.contextPath}/matiere/list" class="btn btn-secondary">Annuler</a>
+        </div>
+    </form>
+</div>
+</body>
+</html>
