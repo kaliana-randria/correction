@@ -1,6 +1,6 @@
 CREATE TABLE matiere (
     id SERIAL PRIMARY KEY,
-    matiere VARCHAR(100),
+    nom VARCHAR(100),
     coeff INT
 );
 

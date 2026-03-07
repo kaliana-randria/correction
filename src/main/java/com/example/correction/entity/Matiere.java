@@ -9,8 +9,8 @@ public class Matiere {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "matiere", nullable = false)
-    private String matiere;
+    @Column(name = "nom", nullable = false)
+    private String nom;
 
     @Column(name = "coeff", nullable = false)
     private int coeff;
@@ -23,12 +23,12 @@ public class Matiere {
         this.id = id;
     }
 
-    public String getMatiere() {
-        return matiere;
+    public String getNom() {
+        return nom;
     }
 
-    public void setMatiere(String matiere) {
-        this.matiere = matiere;
+    public void setNom(String nom) {
+        this.nom = nom;
     }
 
     public int getCoeff() {

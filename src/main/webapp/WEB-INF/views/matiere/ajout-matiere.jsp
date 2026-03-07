@@ -21,14 +21,14 @@
         </div>
     </c:if>
 
-    <form action="${pageContext.request.contextPath}/matiere/ajouter" method="post">
+    <form action="/matiere/ajouter" method="post">
 
         <div class="mb-3">
-            <label class="form-label">Nom de la matière</label>
+            <label class="form-label">Nom matiere</label>
             <input type="text"
-                   name="matiere"
+                   name="nom"
                    class="form-control"
-                   value="${matiere.matiere}"
+                   value="${matiere.nom}"
                    required>
         </div>
 
@@ -48,7 +48,7 @@
                 Ajouter
             </button>
 
-            <a href="${pageContext.request.contextPath}/matiere/list"
+            <a href="/matiere/list"
                class="btn btn-secondary">
                 Retour
             </a>

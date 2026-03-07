@@ -16,8 +16,8 @@
         <input type="hidden" name="id" value="${matiere.id}" />
 
         <div class="mb-3">
-            <label for="matiere" class="form-label">Nom de la matière</label>
-            <input type="text" class="form-control" id="matiere" name="matiere" value="${matiere.matiere}" required>
+            <label for="nom" class="form-label">Nom de la matière</label>
+            <input type="text" class="form-control" id="nom" name="nom" value="${matiere.nom}" required>
         </div>
 
         <div class="mb-3">

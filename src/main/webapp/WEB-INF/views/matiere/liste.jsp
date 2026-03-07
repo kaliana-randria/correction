@@ -30,7 +30,7 @@
                             <c:forEach var="matiere" items="${listes}">
                                 <tr>
                                     <td>${matiere.id}</td>
-                                    <td>${matiere.matiere}</td>
+                                    <td>${matiere.nom}</td>
                                     <td>${matiere.coeff}</td>
                                     <td>
                                         <a href="${pageContext.request.contextPath}/matiere/modifier/${matiere.id}" class="btn btn-secondary">
