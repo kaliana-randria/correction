@@ -67,4 +67,22 @@ public class NoteService {
         return valiny;
     }
 
+    public double calculMoyenneNote(int candidatId, int matiereId){
+        List<Note> notes = noteRepository.findByCandidatIdAndMatiereId(candidatId, matiereId);
+        double moyenne = 0;
+        double somme = 0;
+
+        for (Note note : notes) {
+            somme += note.getValeur();
+        }
+
+        if(notes.isEmpty()){
+            return 0;
+        }
+        
+        moyenne = somme / notes.size();
+
+        return moyenne;
+    }
+
 }
