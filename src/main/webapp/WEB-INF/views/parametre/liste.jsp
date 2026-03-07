@@ -32,10 +32,10 @@
                             <c:forEach var="parametre" items="${listes}">
                                 <tr>
                                     <td>${parametre.id}</td>
-                                    <td>${parametre.matiere}</td>
+                                    <td>${parametre.matiere.nom}</td>
                                     <td>${parametre.seuil}</td>
-                                    <td>${parametre.operateur}</td>
-                                    <td>${parametre.resolution}</td>
+                                    <td>${parametre.operateur.nom}</td>
+                                    <td>${parametre.resolution.nom}</td>
                                     <td>
                                         <a href="${pageContext.request.contextPath}/parametre/modifier/${parametre.id}" class="btn btn-secondary">
                                             Modifier
