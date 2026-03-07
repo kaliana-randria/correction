@@ -57,7 +57,7 @@ public class NoteFinalController {
 
     @PostMapping("/note-final/calculer")
     public ModelAndView calculer(@RequestParam int candidatId, @RequestParam int matiereId) {
-        ModelAndView mv = new ModelAndView("note-final/calcul");
+        ModelAndView mv = new ModelAndView("note-final/calcul-note-final");
 
         mv.addObject("candidats", candidatService.findAll());
         mv.addObject("matieres", matiereService.findAll());

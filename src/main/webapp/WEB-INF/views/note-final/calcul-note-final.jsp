@@ -9,32 +9,54 @@
 </head>
 <body>
 <div class="container mt-5">
-    <h2 class="text-center mb-4">Interface Note Final</h2>
+    <h2 class="text-center mb-4">Interface Note Finale</h2>
 
-    <form th:action="@{/note-final/calculer}" method="post">
-        <label>Candidat :</label>
-        <select name="candidatId">
-            <option th:each="c : ${candidats}" th:value="${c.id}" th:text="${c.nom + ' ' + c.prenom}"></option>
-        </select>
+    <form action="${pageContext.request.contextPath}/note-final/calculer" method="post">
+        <div class="mb-3">
+            <label for="candidatId" class="form-label">Candidat :</label>
+            <select name="candidatId" id="candidatId" class="form-select" required>
+                <option value=""> </option>
+                <c:forEach var="c" items="${candidats}">
+                    <option value="${c.id}">${c.nom} ${c.prenom}</option>
+                </c:forEach>
+            </select>
+        </div>
 
-        <label>Matière :</label>
-        <select name="matiereId">
-            <option th:each="m : ${matieres}" th:value="${m.id}" th:text="${m.nom}"></option>
-        </select>
+        <div class="mb-3">
+            <label for="matiereId" class="form-label">Matière :</label>
+            <select name="matiereId" id="matiereId" class="form-select" required>
+                <option value=""> </option>
+                <c:forEach var="m" items="${matieres}">
+                    <option value="${m.id}">${m.nom}</option>
+                </c:forEach>
+            </select>
+        </div>
 
-        <button type="submit">Calculer</button>
+        <button type="submit" class="btn btn-primary">Calculer</button>
     </form>
 
-    <div th:if="${noteFinal != null}">
-        <h3>Résultat</h3>
-        <p>Candidat : <span th:text="${noteFinal.candidat.nom + ' ' + noteFinal.candidat.prenom}"></span></p>
-        <p>Matière : <span th:text="${noteFinal.matiere.nom}"></span></p>
-        <p>Note finale : <span th:text="${noteFinal.valeur}"></span></p>
-    </div>
+    <c:if test="${not empty success}">
+        <div class="alert alert-success mt-3">
+            ${success}
+        </div>
+    </c:if>
 
-    <div th:if="${error != null}">
-        <p th:text="${error}"></p>
-    </div>
-    </div>
+    <c:if test="${not empty error}">
+        <div class="alert alert-danger mt-3">
+            ${error}
+        </div>
+    </c:if>
+
+    <c:if test="${not empty noteFinal}">
+        <div class="card mt-4">
+            <div class="card-body">
+                <h3>Résultat</h3>
+                <p><strong>Candidat :</strong> ${noteFinal.candidat.nom} ${noteFinal.candidat.prenom}</p>
+                <p><strong>Matière :</strong> ${noteFinal.matiere.nom}</p>
+                <p><strong>Note finale :</strong> ${noteFinal.valeur}</p>
+            </div>
+        </div>
+    </c:if>
+</div>
 </body>
 </html>
