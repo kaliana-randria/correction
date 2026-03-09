@@ -9,6 +9,8 @@
 </head>
 <body>
 <div class="container mt-5">
+
+    <h1>ETU3612</h1>
     <h2 class="text-center mb-4">Interface Note Finale</h2>
 
     <form action="${pageContext.request.contextPath}/note-final/calculer" method="post">
@@ -53,7 +55,7 @@
                 <h3>Résultat</h3>
                 <p><strong>Candidat :</strong> ${noteFinal.candidat.nom} ${noteFinal.candidat.prenom}</p>
                 <p><strong>Matière :</strong> ${noteFinal.matiere.nom}</p>
-                <p><strong>Note finale :</strong> ${noteFinal.valeur}</p>
+                <p><strong>Note finale :</strong> <h1>${noteFinal.valeur}</h1></p>
             </div>
         </div>
     </c:if>

@@ -8,3 +8,10 @@ TRUNCATE TABLE
     candidat,
     matiere
 RESTART IDENTITY CASCADE;
+
+
+TRUNCATE TABLE
+    note_final,
+    note,
+    parametre
+RESTART IDENTITY CASCADE;
