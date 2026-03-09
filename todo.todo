@@ -2,10 +2,10 @@
 - creation base (conception)
  
 - CRUD (au moins anakiroa)
-    - Matiere
-        - id
-        - matiere
-        - coeff
+    ☐ Matiere
+        ☐ id
+        ☐ matiere
+        ☐ coeff
     - Candidat
         - id
         - nom
@@ -49,5 +49,25 @@
         - jerena ny difference -> atao somme
         - azo ny valiny
     - comparaison du valiny @diff_seuil dans table parametre
+        - verifiena aloha hoe marina ve : valiny [operateur] [diff-seuil]
+        - Raha marina -> alaina resolution
+            - jerena raha 
+                - plus petit -> note kely
+                - plus grand -> note lehibe
+                - moyenne -> moyenne note
     - insertion note azo dans note finale
         
+
+- Dans git :
+    - creation feature 
+        - crud-matiere
+        - crud-candidat
+        - crud-correcteur
+        - crud-resolution
+        - crud-operateur
+        - crud-parametre
+        - crud-note
+        
+        - difference-note
+        - comparaison
+        - interface-note-final
