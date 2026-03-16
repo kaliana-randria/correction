@@ -22,7 +22,7 @@
 
         <div class="mb-3">
             <label for="coeff" class="form-label">Coefficient</label>
-            <input type="number" class="form-control" id="coeff" name="coeff" value="${matiere.coeff}" required>
+            <input type="number" step="any" class="form-control" id="coeff" name="coeff" value="${matiere.coeff}" required>
         </div>
 
         <div class="text-center">

@@ -52,7 +52,7 @@
 
         <div class="mb-3">
             <label for="valeur" class="form-label">Note</label>
-            <form:input path="valeur" type="number" cssClass="form-control" id="valeur"/>
+            <form:input path="valeur" type="number" step="any" cssClass="form-control" id="valeur"/>
             <form:errors path="valeur" cssClass="text-danger"/>
         </div>
 

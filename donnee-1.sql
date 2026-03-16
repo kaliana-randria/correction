@@ -6,8 +6,8 @@ CREATE TABLE parametre (
     id_resolution INT REFERENCES resolution(id)
 );
 INSERT INTO parametre(id_matiere, diff_seuil, id_operateur, id_resolution) VALUES
-(1, 3, 1, 1),
-(1, 3, 2, 3);
+(1, 8, 4, 2),
+(1, 12, 1, 1);
 
 CREATE TABLE note (
     id SERIAL PRIMARY KEY,
@@ -17,9 +17,9 @@ CREATE TABLE note (
     note NUMERIC(10,2)
 );
 INSERT INTO note(id_candidat, id_matiere, id_correcteur, note) VALUES
-(1, 1, 1, 6),
-(1, 1, 2, 7),
-(1, 1, 3, 8);
+(1, 1, 1, 15),
+(1, 1, 2, 10),
+(1, 1, 3, 12);
 
 CREATE TABLE note_final (
     id SERIAL PRIMARY KEY,

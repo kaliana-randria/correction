@@ -18,6 +18,9 @@ public class NoteFinalService {
     @Autowired
     private ComparaisonService comparaisonService;
 
+    @Autowired
+    private ParametreService parametreService;
+
     public NoteFinal save(NoteFinal noteFinal) {
         return noteFinalRepository.save(noteFinal);
     }
@@ -26,25 +29,23 @@ public class NoteFinalService {
         return noteFinalRepository.findByCandidatIdAndMatiereId(candidatId, matiereId);
     }
 
-    public NoteFinal appliquerResolution(double valiny, Parametre parametre, List<Note> notes, int candidatId,
-            int matiereId) {
+    public NoteFinal appliquerResolution(double valiny, List<Parametre> parametres, List<Note> notes, int candidatId, int matiereId) {
+        
+        Parametre parametreChoisi = parametreService.choisirParametre(valiny, parametres);
 
-        boolean condition = comparaisonService.verifierCondition(valiny, parametre);
-
-        if (condition) {
-
-            String resolution = parametre.getResolution().getNom();
-
-            double noteFinal = comparaisonService.noteFinalAzo(resolution, notes, candidatId, matiereId);
-
-            NoteFinal nf = new NoteFinal();
-
-            nf.setCandidat(notes.get(0).getCandidat());
-            nf.setMatiere(notes.get(0).getMatiere());
-            nf.setValeur(noteFinal);
-
-            return save(nf);
+        if (parametreChoisi == null) {
+            return null;
         }
-        return null;
+        
+        String resolution = parametreChoisi.getResolution().getNom();
+
+        double noteFinal = comparaisonService.noteFinalAzo(resolution, notes, candidatId, matiereId);
+
+        NoteFinal nf = new NoteFinal();
+        nf.setCandidat(notes.get(0).getCandidat());
+        nf.setMatiere(notes.get(0).getMatiere());
+        nf.setValeur(noteFinal);
+
+        return save(nf);
     }
 }

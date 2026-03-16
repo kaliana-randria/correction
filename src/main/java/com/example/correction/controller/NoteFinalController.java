@@ -83,13 +83,7 @@ public class NoteFinalController {
 
             NoteFinal noteFinal = null;
 
-            for (Parametre parametre : parametres) {
-                noteFinal = noteFinalService.appliquerResolution(valiny, parametre, notes, candidatId, matiereId);
-
-                if (noteFinal != null) {
-                    break;
-                }
-            }
+            noteFinal = noteFinalService.appliquerResolution(valiny, parametres, notes, candidatId, matiereId);
 
             if (noteFinal == null) {
                 mv.addObject("error", "Note final null, pas de calcul.");

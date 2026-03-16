@@ -26,10 +26,6 @@ public class ComparaisonService {
             return valiny < seuil;
         }
 
-        if (operateur.equals("=")) {
-            return valiny == seuil;
-        }
-
         if (operateur.equals(">=")) {
             return valiny >= seuil;
         }

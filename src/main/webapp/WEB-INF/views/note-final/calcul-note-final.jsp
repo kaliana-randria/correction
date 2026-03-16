@@ -6,12 +6,19 @@
     <meta charset="UTF-8">
     <title>Interface note-final</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        h1 {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
 <div class="container mt-5">
 
-    <h1>ETU3612</h1>
-    <h2 class="text-center mb-4">Interface Note Finale</h2>
+    <h1><strong>ETU3612</strong></h1>
+    </br>
+    </br>
+    <h2 class="text-center mb-4">Note Finale</h2>
 
     <form action="${pageContext.request.contextPath}/note-final/calculer" method="post">
         <div class="mb-3">
@@ -38,13 +45,13 @@
     </form>
 
     <c:if test="${not empty success}">
-        <div class="alert alert-success mt-3">
+        <div class="text-success mt-3">
             ${success}
         </div>
     </c:if>
 
     <c:if test="${not empty error}">
-        <div class="alert alert-danger mt-3">
+        <div class="text-danger mt-3">
             ${error}
         </div>
     </c:if>
