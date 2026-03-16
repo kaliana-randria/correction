@@ -42,8 +42,8 @@ public class NoteFinalService {
         double noteFinal = comparaisonService.noteFinalAzo(resolution, notes, candidatId, matiereId);
 
         NoteFinal nf = new NoteFinal();
-        nf.setCandidat(notes.get(0).getCandidat());  // notes.get(0) : on prend juste le candidat de la liste
-        nf.setMatiere(notes.get(0).getMatiere());    // idem pour la matière
+        nf.setCandidat(notes.get(0).getCandidat());
+        nf.setMatiere(notes.get(0).getMatiere());
         nf.setValeur(noteFinal);
 
         return save(nf);
