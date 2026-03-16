@@ -35,6 +35,7 @@
         <div class="mb-3">
             <label class="form-label">Coefficient</label>
             <input type="number"
+                    step="any"
                    name="coeff"
                    class="form-control"
                    value="${matiere.coeff}"

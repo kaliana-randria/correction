@@ -40,7 +40,7 @@
 
         <div class="mb-3">
             <label for="seuil" class="form-label">Diff (SEUIL)</label>
-            <form:input path="seuil" type="number" cssClass="form-control" id="seuil"/>
+            <form:input path="seuil" type="number" step="any" cssClass="form-control" id="seuil"/>
             <form:errors path="seuil" cssClass="text-danger"/>
         </div>
 
