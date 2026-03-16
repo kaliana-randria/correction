@@ -45,13 +45,13 @@
     </form>
 
     <c:if test="${not empty success}">
-        <div class="alert alert-success mt-3">
+        <div class="text-success mt-3">
             ${success}
         </div>
     </c:if>
 
     <c:if test="${not empty error}">
-        <div class="alert alert-danger mt-3">
+        <div class="text-danger mt-3">
             ${error}
         </div>
     </c:if>
