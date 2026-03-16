@@ -29,14 +29,14 @@ public class NoteFinalService {
         return noteFinalRepository.findByCandidatIdAndMatiereId(candidatId, matiereId);
     }
 
-    public NoteFinal appliquerResolution(double valiny, List<Parametre> parametres, List<Note> notes, int candidatId,
-            int matiereId) {
+    public NoteFinal appliquerResolution(double valiny, List<Parametre> parametres, List<Note> notes, int candidatId, int matiereId) {
         
         Parametre parametreChoisi = parametreService.choisirParametre(valiny, parametres);
 
         if (parametreChoisi == null) {
             return null;
         }
+        
         String resolution = parametreChoisi.getResolution().getNom();
 
         double noteFinal = comparaisonService.noteFinalAzo(resolution, notes, candidatId, matiereId);
