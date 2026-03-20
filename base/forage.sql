@@ -1,0 +1,45 @@
+CREATE TABLE client(
+    id SERIAL PRIMARY KEY,
+    nom VARCHAR(100),
+    contact VARCHAR(100)
+);
+
+CREATE TABLE demande(
+    id SERIAL PRIMARY KEY,
+    date TIMESTAMP,
+    id_client INT REFERENCES client(id),
+    lieu VARCHAR(100),
+    district VARCHAR(100)
+);
+
+CREATE TABLE type_devis(
+    id SERIAL PRIMARY KEY,
+    libelle VARCHAR(100)
+);
+
+CREATE TABLE devis(
+    id SERIAL PRIMARY KEY,
+    montant_total NUMERIC(10,2),
+    id_type_devis INT REFERENCES type_devis(id),
+    date TIMESTAMP,
+    id_demande INT REFERENCES demande(id)
+);
+
+CREATE TABLE devis_details(
+    id SERIAL PRIMARY KEY,
+    id_devis INT REFERENCES devis(id),
+    libelle VARCHAR(100),
+    montant NUMERIC(10,2)
+);
+
+CREATE TABLE statut(
+    id SERIAL PRIMARY KEY,
+    libelle VARCHAR(100)
+);
+
+CREATE TABLE demande_statut(
+    id SERIAL PRIMARY KEY,
+    id_demande INT REFERENCES demande(id),
+    id_statut INT REFERENCES statut(id),
+    date TIMESTAMP
+);
