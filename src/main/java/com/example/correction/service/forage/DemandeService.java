@@ -11,7 +11,6 @@ import com.example.correction.entity.forage.Demande;
 import com.example.correction.entity.forage.DemandeStatut;
 import com.example.correction.entity.forage.Statut;
 import com.example.correction.repository.forage.DemandeRepository;
-import com.example.correction.repository.forage.DemandeStatutRepository;
 
 @Service
 public class DemandeService {
