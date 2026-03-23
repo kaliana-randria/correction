@@ -22,7 +22,7 @@ public class DemandeService {
     private StatutService statutService;
 
     @Autowired
-    private DemandeStatutRepository demandeStatutRepository;
+    private DemandeStatutService demandeStatutService;
 
     public List<Demande> findAll(){
         return demandeRepository.findAll();
@@ -42,7 +42,7 @@ public class DemandeService {
         demandeStatut.setStatut(statut);
         demandeStatut.setDate(LocalDateTime.now());
 
-        demandeStatutRepository.save(demandeStatut);
+        demandeStatutService.save(demandeStatut);
 
         return creerDemande;
     }
