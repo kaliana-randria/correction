@@ -7,6 +7,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
@@ -20,9 +21,9 @@ public class Demande {
     @Column(name = "date", nullable = false)
     private LocalDateTime date;
 
-    @Column(name = "id_client", nullable = false)
     @ManyToOne
-    private int idClient;
+    @JoinColumn(name = "id_client", nullable = false)
+    private Client client;
 
     @Column(name = "lieu", nullable = false)
     private String lieu;
@@ -46,14 +47,6 @@ public class Demande {
         this.date = date;
     }
 
-    public int getIdClient() {
-        return idClient;
-    }
-
-    public void setIdClient(int idClient) {
-        this.idClient = idClient;
-    }
-
     public String getLieu() {
         return lieu;
     }
@@ -68,5 +61,13 @@ public class Demande {
 
     public void setDistrict(String district) {
         this.district = district;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
     }
 }

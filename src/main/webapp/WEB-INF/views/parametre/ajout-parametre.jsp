@@ -13,7 +13,7 @@
 
 <div class="container mt-5">
 
-    <h2 class="text-center mb-4">Ajouter un Parametre</h2>
+    <h2 class="text-center mb-4">Ajouter Parametre</h2>
 
     <c:if test="${not empty error}">
         <div class="alert alert-danger">

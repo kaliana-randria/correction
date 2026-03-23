@@ -13,7 +13,7 @@
 
 <div class="container mt-5">
 
-    <h2 class="text-center mb-4">Ajouter une Resolution</h2>
+    <h2 class="text-center mb-4">Ajouter Resolution</h2>
 
     <c:if test="${not empty error}">
         <div class="alert alert-danger">
