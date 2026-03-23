@@ -19,7 +19,7 @@ CREATE TABLE type_devis(
 
 CREATE TABLE devis(
     id SERIAL PRIMARY KEY,
-    montant_total NUMERIC(10,2),
+    -- montant_total NUMERIC(10,2),
     id_type_devis INT REFERENCES type_devis(id),
     date TIMESTAMP,
     id_demande INT REFERENCES demande(id)
