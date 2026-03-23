@@ -16,6 +16,9 @@ CREATE TABLE type_devis(
     id SERIAL PRIMARY KEY,
     libelle VARCHAR(100)
 );
+INSERT INTO type_devis(libelle) VALUES
+('ETUDE'),
+('FORAGE');
 
 CREATE TABLE devis(
     id SERIAL PRIMARY KEY,
