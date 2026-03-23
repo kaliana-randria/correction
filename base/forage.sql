@@ -29,7 +29,8 @@ CREATE TABLE devis_details(
     id SERIAL PRIMARY KEY,
     id_devis INT REFERENCES devis(id),
     libelle VARCHAR(100),
-    montant NUMERIC(10,2)
+    prix_unitaire NUMERIC(10,2),
+    quantite INT
 );
 
 CREATE TABLE statut(
