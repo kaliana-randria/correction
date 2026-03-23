@@ -19,7 +19,7 @@ CREATE TABLE type_devis(
 
 CREATE TABLE devis(
     id SERIAL PRIMARY KEY,
-    montant_total NUMERIC(10,2),
+    -- montant_total NUMERIC(10,2),
     id_type_devis INT REFERENCES type_devis(id),
     date TIMESTAMP,
     id_demande INT REFERENCES demande(id)
@@ -37,6 +37,14 @@ CREATE TABLE statut(
     id SERIAL PRIMARY KEY,
     libelle VARCHAR(100)
 );
+INSERT INTO statut(libelle) VALUES
+('cree'),
+('devis etude cree'),
+('devis etude accepte'),
+('devis etude refuse'),
+('devis forage cree'),
+('devis forage accepte'),
+('devis forage refuse');
 
 CREATE TABLE demande_statut(
     id SERIAL PRIMARY KEY,
