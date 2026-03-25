@@ -7,8 +7,8 @@ function ajoutLigne() {
 
     row.innerHTML = `
         <td><input name="details[${index}].libelle"></td>
-        <td><input type="number" name="details[${index}].PU" oninput="calcul()"></td>
-        <td><input type="number" name="details[${index}].qtte" oninput="calcul()"></td>
+        <td><input type="number" name="details[${index}].PU" oninput="calcul()" min="1"></td>
+        <td><input type="number" name="details[${index}].qtte" oninput="calcul()" min="1"></td>
         <td class="montant">0</td>
         <td><button type="button" onclick="supprimerLigne(this)">Supprimer</button></td>
     `;
