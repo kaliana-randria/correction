@@ -59,7 +59,7 @@ public class DevisService {
     }
 
     @Transactional
-    public void createDevis(DevisFormDto form) {
+    public void creationDevis(DevisFormDto form) {
 
         Demande demande = demandeRepository.findById(form.getIdDemande())
                 .orElseThrow(() -> new RuntimeException("Demande introuvable"));

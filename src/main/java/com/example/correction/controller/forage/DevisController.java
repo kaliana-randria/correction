@@ -66,7 +66,7 @@ public class DevisController {
     @PostMapping("/devis/ajout-devis")
     public String create(@ModelAttribute DevisFormDto form) {
 
-        devisService.createDevis(form);
+        devisService.creationDevis(form);
 
         return "redirect:/devis/list";
     }
