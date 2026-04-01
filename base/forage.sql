@@ -4,6 +4,10 @@ CREATE TABLE client(
     contact VARCHAR(100)
 );
 
+INSERT INTO client(nom, contact) VALUES
+('Rakoto', '0392019834'),
+('Ratiana', '0382347589');
+
 CREATE TABLE demande(
     id SERIAL PRIMARY KEY,
     date TIMESTAMP,
@@ -39,14 +43,23 @@ CREATE TABLE statut(
     id SERIAL PRIMARY KEY,
     libelle VARCHAR(100)
 );
+-- INSERT INTO statut(libelle) VALUES
+-- ('cree'),
+-- ('devis etude cree'),
+-- ('devis etude accepte'),
+-- ('devis etude refuse'),
+-- ('devis forage cree'),
+-- ('devis forage accepte'),
+-- ('devis forage refuse');
+
 INSERT INTO statut(libelle) VALUES
 ('cree'),
 ('devis etude cree'),
-('devis etude accepte'),
-('devis etude refuse'),
-('devis forage cree'),
-('devis forage accepte'),
-('devis forage refuse');
+('devis forage cree');
+
+-- cree
+-- etude cree
+-- forage cree
 
 CREATE TABLE demande_statut(
     id SERIAL PRIMARY KEY,

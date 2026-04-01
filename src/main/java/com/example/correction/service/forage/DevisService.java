@@ -79,14 +79,14 @@ public class DevisService {
             devisDetailsRepository.save(d);
         }
 
-        // int statutId = (form.getIdTypeDevis() == 1) ? 2 : 5;
+        // int statutId = (form.getIdTypeDevis() == 1) ? 2 : 3;
 
         int statutId;
 
         if (form.getIdTypeDevis() == 1) {
             statutId = 2;
         } else {
-            statutId = 5;
+            statutId = 3;
         }
 
         Statut statut = statutRepository.findById(statutId)

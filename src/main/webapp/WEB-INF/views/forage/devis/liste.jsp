@@ -27,7 +27,6 @@
                 <th>Client</th>
                 <th>Lieu</th>
                 <th>District</th>
-                <th>Actions</th>
             </tr>
         </thead>
 
@@ -40,11 +39,6 @@
                     <td>${d.demande.client.nom}</td>
                     <td>${d.demande.lieu}</td>
                     <td>${d.demande.district}</td>
-
-                    <%-- <td>
-                        <a href="/devis/detail/${d.id}" class="btn btn-info btn-sm">Voir</a>
-                        <a href="/devis/delete/${d.id}" class="btn btn-danger btn-sm">Supprimer</a>
-                    </td> --%>
                 </tr>
             </c:forEach>
         </tbody>
