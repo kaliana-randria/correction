@@ -12,11 +12,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.correction.dto.DevisFormDto;
+import com.example.correction.entity.Note;
 import com.example.correction.entity.forage.Demande;
 import com.example.correction.entity.forage.Devis;
+import com.example.correction.entity.forage.DevisDetails;
 import com.example.correction.repository.forage.DemandeRepository;
+import com.example.correction.service.forage.DevisDetailsService;
 import com.example.correction.service.forage.DevisService;
 import com.example.correction.service.forage.TypeDevisService;
 
@@ -31,6 +35,9 @@ public class DevisController {
 
     @Autowired
     private DevisService devisService;
+
+    @Autowired
+    private DevisDetailsService devisDetailsService;
 
     @GetMapping("/devis/list")
     public ModelAndView listClients() {
@@ -69,5 +76,33 @@ public class DevisController {
         devisService.creationDevis(form);
 
         return "redirect:/devis/list";
+    }
+
+    @GetMapping("/devis/devis-details/{id}")
+    public ModelAndView voirDetails(@PathVariable int id, RedirectAttributes redirectAttributes) {
+
+        ModelAndView mv = new ModelAndView();
+
+        try {
+            Devis devis = devisService.findById(id);
+
+            List<DevisDetails> details = devisDetailsService.findByDevis(devis);
+
+            if (devis == null) {
+                redirectAttributes.addFlashAttribute("error", "Devis introuvable !");
+                mv.setViewName("redirect:/devis/list");
+                return mv;
+            }
+
+            mv.setViewName("forage/devis/devis-details");
+            mv.addObject("devis", devis);
+            mv.addObject("details", details);
+
+        } catch (Exception e) {
+            redirectAttributes.addFlashAttribute("error", "Erreur : " + e.getMessage());
+            mv.setViewName("redirect:/devis/list");
+        }
+
+        return mv;
     }
 }

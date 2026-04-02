@@ -27,6 +27,7 @@
                 <th>Client</th>
                 <th>Lieu</th>
                 <th>District</th>
+                <th>Devis details</th>
             </tr>
         </thead>
 
@@ -39,6 +40,7 @@
                     <td>${d.demande.client.nom}</td>
                     <td>${d.demande.lieu}</td>
                     <td>${d.demande.district}</td>
+                    <td><a href="/devis/devis-details/${d.id}">Voir devis details</a></td>
                 </tr>
             </c:forEach>
         </tbody>
