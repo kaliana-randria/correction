@@ -15,7 +15,6 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.correction.dto.DevisFormDto;
-import com.example.correction.entity.Note;
 import com.example.correction.entity.forage.Demande;
 import com.example.correction.entity.forage.Devis;
 import com.example.correction.entity.forage.DevisDetails;
