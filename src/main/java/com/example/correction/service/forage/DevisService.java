@@ -15,7 +15,6 @@ import com.example.correction.entity.forage.Statut;
 import com.example.correction.entity.forage.TypeDevis;
 import com.example.correction.repository.forage.DemandeRepository;
 import com.example.correction.repository.forage.DemandeStatutRepository;
-import com.example.correction.repository.forage.DevisDetailsRepository;
 import com.example.correction.repository.forage.DevisRepository;
 import com.example.correction.repository.forage.StatutRepository;
 import com.example.correction.repository.forage.TypeDevisRepository;
@@ -34,7 +33,7 @@ public class DevisService {
     private TypeDevisRepository typeDevisRepository;
 
     @Autowired
-    private DevisDetailsRepository devisDetailsRepository;
+    private DevisDetailsService devisDetailsService;
 
     @Autowired
     private StatutRepository statutRepository;
@@ -76,7 +75,7 @@ public class DevisService {
 
         for (DevisDetails d : form.getDetails()) {
             d.setDevis(devis);
-            devisDetailsRepository.save(d);
+            devisDetailsService.save(d);
         }
 
         // int statutId = (form.getIdTypeDevis() == 1) ? 2 : 3;

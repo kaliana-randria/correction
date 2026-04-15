@@ -66,6 +66,9 @@
 
     <script src="/assets/js/demande.js"></script>
     <script src="/assets/js/devis-details.js"></script>
+    <script>
+        const REDUCTION = ${reduction};
+    </script>
 
 </body>
 </html>

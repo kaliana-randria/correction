@@ -21,6 +21,7 @@ import com.example.correction.entity.forage.DevisDetails;
 import com.example.correction.repository.forage.DemandeRepository;
 import com.example.correction.service.forage.DevisDetailsService;
 import com.example.correction.service.forage.DevisService;
+import com.example.correction.service.forage.ReductionService;
 import com.example.correction.service.forage.TypeDevisService;
 
 @Controller
@@ -38,6 +39,9 @@ public class DevisController {
     @Autowired
     private DevisDetailsService devisDetailsService;
 
+    @Autowired
+    private ReductionService reductionService;
+
     @GetMapping("/devis/list")
     public ModelAndView listClients() {
         ModelAndView mv = new ModelAndView("forage/devis/liste");
@@ -50,9 +54,12 @@ public class DevisController {
     public ModelAndView showForm() {
         ModelAndView mv = new ModelAndView("forage/devis/ajout-devis");
 
+        double reduction = reductionService.avoirValeur().getValeur();
+
         mv.addObject("type_devis", typeDevisService.findAll());
         mv.addObject("devisForm", new DevisFormDto());
-
+        mv.addObject("reduction", reduction);
+ 
         return mv;
     }
 

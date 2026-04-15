@@ -17,6 +17,12 @@
         <a href="/devis/ajout-devis" class="btn btn-primary">+ Nouveau Devis</a>
     </div>
 
+    <div class="text-end mb-3">
+        <a href="/chiffre-affaire/calcul" class="btn btn-success">
+            Voir chiffre d'affaire
+        </a>
+    </div>
+
     <table class="table table-bordered table-hover text-center">
 
         <thead class="table-dark">

@@ -16,24 +16,33 @@ function ajoutLigne() {
     index++;
 }
 
-
-
 function calcul() {
     let total = 0;
 
     document.querySelectorAll("#detailsTable tr").forEach((row, i) => {
         if (i === 0) return;
 
-        let pu = parseFloat(row.cells[1].querySelector("input")?.value) || 0;
-        let qte = parseFloat(row.cells[2].querySelector("input")?.value) || 0;
+        const inputPu = row.cells[1].querySelector("input");
+        const inputQte = row.cells[2].querySelector("input");
 
-        let montant = pu * qte;
-        row.cells[3].innerText = montant;
+        let pu = parseFloat(inputPu.value) || 0;
+        let qte = parseFloat(inputQte.value) || 0;
+
+        let puFinal = pu;
+
+        if (pu >= REDUCTION) {
+            puFinal = pu - ((pu * 10)/100);
+            // inputPu.value = puFinal;
+        }
+
+        let montant = puFinal * qte;
+
+        row.cells[3].innerText = montant.toLocaleString();
 
         total += montant;
     });
 
-    document.getElementById("total").innerText = total;
+    document.getElementById("total").innerText = total.toLocaleString();
 }
 
 

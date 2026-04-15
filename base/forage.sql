@@ -5,8 +5,8 @@ CREATE TABLE client(
 );
 
 INSERT INTO client(nom, contact) VALUES
-('Rakoto', '0392019834'),
-('Ratiana', '0382347589');
+('RABE Jean', '034 10 300 01');
+-- ('Ratiana', '0382347589');
 
 CREATE TABLE demande(
     id SERIAL PRIMARY KEY,
@@ -57,13 +57,26 @@ INSERT INTO statut(libelle) VALUES
 ('devis etude cree'),
 ('devis forage cree');
 
--- cree
--- etude cree
--- forage cree
-
 CREATE TABLE demande_statut(
     id SERIAL PRIMARY KEY,
     id_demande INT REFERENCES demande(id),
     id_statut INT REFERENCES statut(id),
     date TIMESTAMP
+);
+
+CREATE TABLE reduction(
+    id SERIAL PRIMARY KEY,
+    valeur NUMERIC(10,2)
+);
+INSERT INTO reduction(valeur) VALUES(1000000);
+
+CREATE TABLE chiffre_affaire(
+    id SERIAL PRIMARY KEY,
+    id_type_devis INT REFERENCES type_devis(id),
+    montant_global_devis NUMERIC(10,2)
+);
+
+CREATE TABLE chiffre_affaire_total(
+    id SERIAL PRIMARY KEY,
+    montant_global_devis_total NUMERIC(10,2)
 );
