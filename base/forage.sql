@@ -63,6 +63,8 @@ CREATE TABLE demande_statut(
     id_statut INT REFERENCES statut(id),
     date TIMESTAMP
 );
+ALTER TABLE demande_statut 
+ADD COLUMN observation VARCHAR(255);
 
 CREATE TABLE reduction(
     id SERIAL PRIMARY KEY,
