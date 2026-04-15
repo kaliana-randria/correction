@@ -1,0 +1,98 @@
+body {
+    background-color: #f5f7fa;
+}
+
+h2 {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+form {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+label {
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+input, select {
+    border-radius: 8px !important;
+}
+
+#infoDemande {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+#detailsTable {
+    width: 100%;
+    margin-top: 15px;
+    border-collapse: collapse;
+}
+
+#detailsTable th {
+    background-color: #232323;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+#detailsTable td {
+    padding: 8px;
+    text-align: center;
+}
+
+#detailsTable input {
+    width: 100%;
+    padding: 5px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+button {
+    border-radius: 8px !important;
+}
+
+button[type="submit"] {
+    background-color: #004524;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+}
+
+button[type="submit"]:hover {
+    background-color: #012a16;
+}
+
+button[onclick="ajoutLigne()"] {
+    margin-top: 10px;
+    background-color: #0243a5;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+}
+
+button[onclick="ajoutLigne()"]:hover {
+    background-color: #01265d;
+}
+
+button[onclick^="supprimerLigne"] {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+}
+
+button[onclick^="supprimerLigne"]:hover {
+    background-color: #bb2d3b;
+}
+
+#total {
+    font-weight: bold;
+    /* color: #198754; */
+}
