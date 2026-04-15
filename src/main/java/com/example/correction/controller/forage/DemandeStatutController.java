@@ -1,6 +1,5 @@
 package com.example.correction.controller.forage;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,13 +8,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.example.correction.entity.forage.Demande;
 import com.example.correction.entity.forage.DemandeStatut;
-import com.example.correction.service.forage.DemandeService;
 import com.example.correction.service.forage.DemandeStatutService;
 import com.example.correction.service.forage.StatutService;
 
@@ -26,9 +22,6 @@ public class DemandeStatutController {
 
     @Autowired
     private StatutService statutService;
-
-    @Autowired
-    private DemandeService demandeService;
 
     @GetMapping("/demande-statut/statutActuel")
     public ModelAndView listStatutDemandeActuel() {
