@@ -29,7 +29,7 @@ public class DemandeStatut {
     @Column(name = "date", nullable = false)
     private LocalDateTime date;
 
-    @JoinColumn(name = "observation")
+    @Column(name = "observation")
     private String observation;
 
     public String getObservation() {

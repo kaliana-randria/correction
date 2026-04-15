@@ -40,6 +40,7 @@ public class DemandeService {
         demandeStatut.setDemande(creerDemande);
         demandeStatut.setStatut(statut);
         demandeStatut.setDate(LocalDateTime.now());
+        demandeStatut.setObservation("creation demande");
 
         demandeStatutService.save(demandeStatut);
 
