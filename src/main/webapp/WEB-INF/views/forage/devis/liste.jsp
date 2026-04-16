@@ -23,6 +23,10 @@
         </a>
     </div>
 
+    <div class="text-end mb-3">
+        <a href="/demande-statut/statutActuel" class="btn btn-primary">Statut demande Actuel</a>
+    </div>
+
     <table class="table table-bordered table-hover text-center">
 
         <thead class="table-dark">

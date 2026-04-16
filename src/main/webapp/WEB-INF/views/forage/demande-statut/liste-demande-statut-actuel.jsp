@@ -17,6 +17,10 @@
             <a href="/demande-statut/historique" class="btn btn-primary">Voir Historique Global</a>
         </div>
         
+        <div class="text-end mb-3">
+            <a href="${pageContext.request.contextPath}/devis/list" class="btn btn-primary">Retour vers devis</a>
+        </div>
+        
         <div class="table-container">
             <table class="table table-striped table-hover">
                 <thead class="table-dark">
