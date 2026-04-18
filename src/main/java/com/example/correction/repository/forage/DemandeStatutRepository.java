@@ -13,8 +13,8 @@ public interface DemandeStatutRepository extends JpaRepository<DemandeStatut, In
     @Query("""
         SELECT ds
         FROM DemandeStatut ds
-        WHERE ds.date = (
-            SELECT MAX(ds2.date)
+        WHERE ds.id = (
+            SELECT MAX(ds2.id)
             FROM DemandeStatut ds2
             WHERE ds2.demande.id = ds.demande.id
         )

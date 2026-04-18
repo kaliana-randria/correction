@@ -31,6 +31,7 @@
                         <th>DATE</th>
                         <th>OBSERVATION</th>
                         <th>Mettre nouveau statut</th>
+                        <th>Modif Observation/date</th>
                         <th>Historique</th>
                         <%-- <th>Supprimer</th> --%>
                     </tr>
@@ -51,6 +52,11 @@
                                     <td>
                                         <a href="${pageContext.request.contextPath}/demande-statut/form-demande-statut/${demandeStatut.id}" class="btn btn-secondary">
                                             Mettre nouveau statut
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="${pageContext.request.contextPath}/demande-statut/modifier-obsrvation-date/${demandeStatut.id}" class="btn btn-secondary">
+                                            Modifier Observation ou date
                                         </a>
                                     </td>
                                     <td>

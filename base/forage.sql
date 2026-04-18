@@ -43,19 +43,17 @@ CREATE TABLE statut(
     id SERIAL PRIMARY KEY,
     libelle VARCHAR(100)
 );
--- INSERT INTO statut(libelle) VALUES
--- ('cree'),
--- ('devis etude cree'),
--- ('devis etude accepte'),
--- ('devis etude refuse'),
--- ('devis forage cree'),
--- ('devis forage accepte'),
--- ('devis forage refuse');
 
 INSERT INTO statut(libelle) VALUES
 ('cree'),
 ('devis etude cree'),
 ('devis forage cree');
+
+-- INSERT INTO statut(libelle) VALUES
+-- ('devis etude accepte'),
+-- ('devis etude refuse'),
+-- ('devis forage accepte'),
+-- ('devis forage refuse');
 
 CREATE TABLE demande_statut(
     id SERIAL PRIMARY KEY,

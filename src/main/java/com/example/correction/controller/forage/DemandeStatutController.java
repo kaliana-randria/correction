@@ -91,4 +91,48 @@ public class DemandeStatutController {
 
         return mv;
     }
+
+    @GetMapping("/demande-statut/modifier-obsrvation-date/{id}")
+    public ModelAndView formModifObservationDate(@PathVariable int id, RedirectAttributes redirectAttributes) {
+        ModelAndView mv = new ModelAndView();
+
+        try {
+            DemandeStatut demandeStatut = demandeStatutService.findById(id);
+
+            if (demandeStatut == null) {
+                redirectAttributes.addFlashAttribute("error", "Demande Statut introuvable !");
+                mv.setViewName("redirect:/demande-statut/statutActuel");
+                return mv;
+            }
+
+            mv.setViewName("forage/demande-statut/modifier-obsrvation-date");
+            mv.addObject("demandeStatut", demandeStatut);
+            mv.addObject("statuts", statutService.findAll());
+
+        } catch (Exception e) {
+            redirectAttributes.addFlashAttribute("error", "Erreur : " + e.getMessage());
+            mv.setViewName("redirect:/demande-statut/statutActuel");
+        }
+
+        return mv;
+    }
+
+    @PostMapping("/demande-statut/modifier")
+    public ModelAndView updateClient(@ModelAttribute DemandeStatut demandeStatut,
+            RedirectAttributes redirectAttributes) {
+        ModelAndView mv = new ModelAndView();
+
+        try {
+            demandeStatutService.save(demandeStatut);
+            redirectAttributes.addFlashAttribute("success", "Demande Statut (Observation / date) modifiée avec succès !");
+            mv.setViewName("redirect:/demande-statut/statutActuel");
+
+        } catch (Exception e) {
+            mv.setViewName("forage/demande-statut/modifier-obsrvation-date");
+            mv.addObject("demandeStatut", demandeStatut);
+            mv.addObject("error", "Erreur lors de la modification : " + e.getMessage());
+        }
+
+        return mv;
+    }
 }
