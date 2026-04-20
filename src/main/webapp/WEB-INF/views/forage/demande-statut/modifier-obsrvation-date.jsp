@@ -41,7 +41,7 @@
                    name="date"
                    class="form-control"
                    value="${demandeStatut.date}"
-                   required>q       
+                   required>   
         </div>
 
         <div class="mb-3">
