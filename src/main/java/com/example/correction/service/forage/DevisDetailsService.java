@@ -57,4 +57,8 @@ public class DevisDetailsService {
 
         return devisDetailsRepository.save(devisDetails);
     }
+
+    public List<DevisDetails> findDetailsByDevis(int idDevis){
+        return devisDetailsRepository.findDetailsByDevis(idDevis);
+    }
 }

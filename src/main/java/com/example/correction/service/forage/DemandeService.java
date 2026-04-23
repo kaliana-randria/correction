@@ -50,4 +50,8 @@ public class DemandeService {
     public void deleteById(int id){
         demandeRepository.deleteById(id);
     }
+
+    public List<Demande> findDemandeByClient(int idCLient){
+        return demandeRepository.findDemandeByIdClient(idCLient);
+    }
 }

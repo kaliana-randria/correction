@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import com.example.correction.entity.forage.DemandeStatut;
@@ -22,4 +23,10 @@ public interface DemandeStatutRepository extends JpaRepository<DemandeStatut, In
     List<DemandeStatut> getStatutActuelPourDemandes();
 
     List<DemandeStatut> findByDemandeId(int idDemande);
+
+    @Query("SELECT ds FROM DemandeStatut ds WHERE ds.demande.id = :idDemande ORDER BY ds.date DESC")
+    List<DemandeStatut> findByDemande(@Param("idDemande") int idDemande);
+
+    @Query("SELECT ds FROM DemandeStatut ds WHERE ds.statut.id = :id")
+    List<DemandeStatut> findByStatut(@Param("id") int id);
 }

@@ -98,4 +98,8 @@ public class DevisService {
 
         demandeStatutRepository.save(ds);
     }
+
+    public List<Devis> findByDemande(int idDemande){
+        return devisRepository.findByDemande(idDemande);
+    }
 }

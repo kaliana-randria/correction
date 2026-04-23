@@ -63,5 +63,13 @@ public class DemandeStatutService {
 
         return demandeStatutRepository.save(ds);
     }
+
+    public List<DemandeStatut> findByDemande(int idDemande){
+        return demandeStatutRepository.findByDemande(idDemande);
+    }
+
+    public List<DemandeStatut> findByStatut(int idStatut){
+        return demandeStatutRepository.findByStatut(idStatut);
+    }
     
 }
