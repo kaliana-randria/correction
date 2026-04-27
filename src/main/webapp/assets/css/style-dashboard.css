@@ -1,0 +1,263 @@
+/* ===== DASHBOARD STYLE ===== */
+/* Aesthetic: Refined dark editorial with warm gold accents */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500&display=swap');
+
+:root {
+  --bg-primary: #0f0f13;
+  --bg-card: #16161e;
+  --bg-card-hover: #1c1c27;
+  --border: rgba(255, 255, 255, 0.07);
+  --gold: #c9a84c;
+  --gold-light: #e8c97a;
+  --gold-dim: rgba(201, 168, 76, 0.15);
+  --text-primary: #f0ede6;
+  --text-muted: #7a7a8c;
+  --success: #3ecf8e;
+  --success-dim: rgba(62, 207, 142, 0.12);
+  --radius: 16px;
+  --radius-sm: 10px;
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-primary);
+  background-image:
+    radial-gradient(ellipse at 20% 10%, rgba(201, 168, 76, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(62, 207, 142, 0.04) 0%, transparent 50%);
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 60px 24px 80px;
+}
+
+/* ===== TITLE ===== */
+h2.text-center {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: center;
+  letter-spacing: -0.02em;
+  margin-bottom: 48px;
+  position: relative;
+}
+
+h2.text-center::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 2px;
+  background: var(--gold);
+  margin: 14px auto 0;
+  border-radius: 2px;
+}
+
+/* ===== TABLE CONTAINER → DASHBOARD GRID ===== */
+.table-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+/* ===== CHIFFRE D'AFFAIRES CARD ===== */
+.table-container > h1:first-child {
+  background: linear-gradient(135deg, #1e1a0f 0%, #1c1c27 100%);
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  border-radius: var(--radius);
+  padding: 32px 36px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  box-shadow: 0 0 0 1px rgba(201, 168, 76, 0.05), var(--shadow);
+  transition: border-color 0.3s ease;
+}
+
+.table-container > h1:first-child:hover {
+  border-color: rgba(201, 168, 76, 0.55);
+}
+
+.table-container > h1:first-child a {
+  text-decoration: none;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.table-container > h1:first-child a::before {
+  content: '€';
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: var(--gold-dim);
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  border-radius: 10px;
+  font-size: 1.2rem;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.table-container > h1:first-child a span,
+.table-container > h1:first-child a {
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+}
+
+/* ===== STAT CARDS (Clients & Devis) ===== */
+.table-container > h2 {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.table-container > h2 a.btn-success {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 24px 30px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-primary) !important;
+  text-decoration: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  box-shadow: var(--shadow);
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
+  width: 100%;
+}
+
+.table-container > h2 a.btn-success:hover {
+  background: var(--bg-card-hover);
+  border-color: rgba(62, 207, 142, 0.35);
+  transform: translateY(-2px);
+}
+
+.table-container > h2:nth-of-type(1) a.btn-success::before {
+  content: '👥';
+  font-size: 1.4rem;
+}
+
+.table-container > h2:nth-of-type(2) a.btn-success::before {
+  content: '📋';
+  font-size: 1.4rem;
+}
+
+/* ===== STATISTIQUES SECTION ===== */
+.table-container > h2:last-of-type {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  margin-top: 12px;
+  padding: 0 4px;
+}
+
+/* ===== STATUTS LIST ===== */
+.table-container ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 14px;
+  padding: 0;
+}
+
+.table-container ul li a {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 20px 22px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 0.88rem;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.table-container ul li a::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px; height: 100%;
+  background: var(--gold);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.table-container ul li a:hover {
+  background: var(--bg-card-hover);
+  border-color: rgba(201, 168, 76, 0.3);
+  transform: translateY(-2px);
+}
+
+.table-container ul li a:hover::before {
+  opacity: 1;
+}
+
+/* Number inside statut */
+.table-container ul li a::after {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--gold-light);
+  font-family: 'Playfair Display', serif;
+}
+
+/* ===== ANIMATIONS ===== */
+.table-container > * {
+  animation: fadeUp 0.5s ease both;
+}
+
+.table-container > *:nth-child(1) { animation-delay: 0.05s; }
+.table-container > *:nth-child(2) { animation-delay: 0.1s; }
+.table-container > *:nth-child(3) { animation-delay: 0.15s; }
+.table-container > *:nth-child(4) { animation-delay: 0.2s; }
+.table-container > *:nth-child(5) { animation-delay: 0.25s; }
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  .container {
+    padding: 40px 16px 60px;
+  }
+
+  h2.text-center {
+    font-size: 1.8rem;
+  }
+
+  .table-container ul {
+    grid-template-columns: 1fr 1fr;
+  }
+}

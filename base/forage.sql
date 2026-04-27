@@ -64,6 +64,12 @@ CREATE TABLE demande_statut(
 ALTER TABLE demande_statut 
 ADD COLUMN observation VARCHAR(255);
 
+ALTER TABLE demande_statut 
+ADD COLUMN duree_tsotra INT;
+
+ALTER TABLE demande_statut 
+ADD COLUMN duree_sarotra INT;
+
 CREATE TABLE reduction(
     id SERIAL PRIMARY KEY,
     valeur NUMERIC(10,2)

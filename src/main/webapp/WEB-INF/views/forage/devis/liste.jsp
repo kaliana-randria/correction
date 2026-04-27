@@ -57,6 +57,12 @@
 
     </table>
 
+    <div class="text-center mt-3">
+        <a href="${pageContext.request.contextPath}/dashboard" class="btn btn-secondary">
+            Retour Dashboard
+        </a>
+    </div>
+
 </div>
 
 </body>

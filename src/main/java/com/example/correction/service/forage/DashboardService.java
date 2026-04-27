@@ -11,7 +11,6 @@ import com.example.correction.entity.forage.ChiffreAffaireTotal;
 import com.example.correction.repository.forage.ClientRepository;
 import com.example.correction.repository.forage.DevisRepository;
 import com.example.correction.repository.forage.StatutRepository;
-import com.example.correction.repository.forage.TypeDevisRepository;
 
 @Service
 public class DashboardService {
@@ -19,8 +18,8 @@ public class DashboardService {
     @Autowired
     private ClientRepository clientRepository;
 
-    @Autowired
-    private TypeDevisRepository typeDevisRepository;
+    // @Autowired
+    // private TypeDevisRepository typeDevisRepository;
 
     @Autowired
     private StatutRepository statutRepository;

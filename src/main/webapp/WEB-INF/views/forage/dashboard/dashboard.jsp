@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <title>Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/style-client-liste.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/style-dashboard.css">
 </head>
 <body>
     <div class="container">
@@ -20,8 +20,8 @@
 
             <h1>
                 <a href="${pageContext.request.contextPath}/dashboard/chiffre-affaire-detail" class="text-decoration-none">
-                    Chiffre affaire Global :
-                    <fmt:formatNumber value="${data.nbrDevis}" type="number" />
+                    Chiffre affaire Global : <fmt:formatNumber value="${data.chiffreAffaire}" type="number" />
+                    <%-- <fmt:formatNumber value="${data.nbrDevis}" type="number" /> --%>
                 </a>
             </h1>
 
