@@ -67,6 +67,9 @@
             <button type="submit" class="btn btn-success">Ajouter</button>
             <a href="${pageContext.request.contextPath}/demande/list" class="btn btn-secondary">Retour</a>
         </div>
+         <div class="text-center mt-4">
+            <a href="${pageContext.request.contextPath}/dashboard" class="btn btn-secondary">DASHBOARD</a>
+        </div>
 
     </form:form>
 

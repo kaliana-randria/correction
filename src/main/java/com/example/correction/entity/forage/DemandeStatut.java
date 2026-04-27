@@ -29,6 +29,17 @@ public class DemandeStatut {
     @Column(name = "date", nullable = false)
     private LocalDateTime date;
 
+    @Column(name = "observation")
+    private String observation;
+
+    public String getObservation() {
+        return observation;
+    }
+
+    public void setObservation(String observation) {
+        this.observation = observation;
+    }
+
     public int getId() {
         return id;
     }

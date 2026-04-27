@@ -43,19 +43,17 @@ CREATE TABLE statut(
     id SERIAL PRIMARY KEY,
     libelle VARCHAR(100)
 );
--- INSERT INTO statut(libelle) VALUES
--- ('cree'),
--- ('devis etude cree'),
--- ('devis etude accepte'),
--- ('devis etude refuse'),
--- ('devis forage cree'),
--- ('devis forage accepte'),
--- ('devis forage refuse');
 
 INSERT INTO statut(libelle) VALUES
 ('cree'),
 ('devis etude cree'),
 ('devis forage cree');
+
+-- INSERT INTO statut(libelle) VALUES
+-- ('devis etude accepte'),
+-- ('devis etude refuse'),
+-- ('devis forage accepte'),
+-- ('devis forage refuse');
 
 CREATE TABLE demande_statut(
     id SERIAL PRIMARY KEY,
@@ -63,6 +61,14 @@ CREATE TABLE demande_statut(
     id_statut INT REFERENCES statut(id),
     date TIMESTAMP
 );
+ALTER TABLE demande_statut 
+ADD COLUMN observation VARCHAR(255);
+
+ALTER TABLE demande_statut 
+ADD COLUMN duree_tsotra INT;
+
+ALTER TABLE demande_statut 
+ADD COLUMN duree_sarotra INT;
 
 CREATE TABLE reduction(
     id SERIAL PRIMARY KEY,
