@@ -21,7 +21,7 @@
         </div>
     </c:if>
 
-    <form:form action="${pageContext.request.contextPath}/demande-statut/modifier"
+    <form:form action="${pageContext.request.contextPath}/demande-statut/modifier-obsrvation-date"
                method="post"
                modelAttribute="demandeStatut">
 

@@ -29,4 +29,15 @@ public interface DemandeStatutRepository extends JpaRepository<DemandeStatut, In
 
     @Query("SELECT ds FROM DemandeStatut ds WHERE ds.statut.id = :id")
     List<DemandeStatut> findByStatut(@Param("id") int id);
+
+    @Query("""
+        SELECT ds
+        FROM DemandeStatut ds
+        WHERE ds.demande.id = :idDemande
+        ORDER BY ds.date DESC
+    """)
+    List<DemandeStatut> findLastByDemande(@Param("idDemande") int idDemande);
+
+    @Query("SELECT ds FROM DemandeStatut ds WHERE ds.demande.id = :idDemande ORDER BY ds.date ASC")
+    List<DemandeStatut> findByDemandeOrderByDateAsc(@Param("idDemande") int idDemande);
 }

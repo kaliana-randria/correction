@@ -1,5 +1,6 @@
 package com.example.correction.service.forage;
 
+import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -41,19 +42,22 @@ public class DevisService {
     @Autowired
     private DemandeStatutRepository demandeStatutRepository;
 
-    public List<Devis> findAll(){
+    @Autowired
+    private DureeService dureeService;
+
+    public List<Devis> findAll() {
         return devisRepository.findAll();
     }
 
-    public Devis findById(int id){
+    public Devis findById(int id) {
         return devisRepository.findById(id).orElse(null);
     }
 
-    public Devis save(Devis devis){
+    public Devis save(Devis devis) {
         return devisRepository.save(devis);
     }
 
-    public void deleteById(int id){
+    public void deleteById(int id) {
         devisRepository.deleteById(id);
     }
 
@@ -91,15 +95,41 @@ public class DevisService {
         Statut statut = statutRepository.findById(statutId)
                 .orElseThrow();
 
-        DemandeStatut ds = new DemandeStatut();
-        ds.setDemande(demande);
-        ds.setStatut(statut);
-        ds.setDate(LocalDateTime.now());
+        // DemandeStatut ds = new DemandeStatut();
+        // ds.setDemande(demande);
+        // ds.setStatut(statut);
+        // ds.setDate(LocalDateTime.now());
 
-        demandeStatutRepository.save(ds);
+        // demandeStatutRepository.save(ds);
+
+        List<DemandeStatut> historiques = demandeStatutRepository.findByDemande(demande.getId());
+
+        LocalDateTime now = LocalDateTime.now();
+
+        DemandeStatut nouveau = new DemandeStatut();
+        nouveau.setDemande(demande);
+        nouveau.setStatut(statut);
+        nouveau.setDate(now);
+
+        if (!historiques.isEmpty()) {
+
+            DemandeStatut precedent = historiques.get(0);
+
+            Duration dureeTotal = dureeService.calculDureeTsotra(precedent.getDate(), now);
+            nouveau.setDureeTotal(dureeService.calculerHeuresArrondies(dureeTotal));
+
+            Duration dureeTravaille = dureeService.calculDureeSarotra(precedent.getDate(), now);
+            nouveau.setDureeTravaille(dureeService.calculerHeuresArrondies(dureeTravaille));
+
+        } else {
+            nouveau.setDureeTotal(0);
+            nouveau.setDureeTravaille(0);
+        }
+
+        demandeStatutRepository.save(nouveau);
     }
 
-    public List<Devis> findByDemande(int idDemande){
+    public List<Devis> findByDemande(int idDemande) {
         return devisRepository.findByDemande(idDemande);
     }
 }

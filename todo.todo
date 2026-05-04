@@ -85,4 +85,39 @@
 
 java.time
 
-debugge
+
+    // public DemandeStatut saveDemandeStatut(DemandeStatut demandeStatut) {
+
+    //     Demande demande = demandeRepository.findById(demandeStatut.getDemande().getId())
+    //             .orElseThrow(() -> new RuntimeException("Demande non trouvée"));
+
+    //     Statut statut = statutRepository.findById(demandeStatut.getStatut().getId())
+    //             .orElseThrow(() -> new RuntimeException("Statut non trouvé"));
+
+    //     // dernier statut de cette demande
+    //     List<DemandeStatut> historiques = demandeStatutRepository.findByDemande(demande.getId());
+
+    //     if (!historiques.isEmpty()) {
+
+    //         DemandeStatut ancien = historiques.get(0); // le plus récent
+
+    //         int dureeTotal = dureeService.calculDureeTotal(ancien.getDate(), demandeStatut.getDate());
+    //         int dureeTravaille = dureeService.calculDureeTravaille(ancien.getDate(), demandeStatut.getDate());
+
+    //         ancien.setDureeTotal(dureeTotal);
+    //         ancien.setDureeTravaille(dureeTravaille);
+
+    //         demandeStatutRepository.save(ancien);
+    //     }
+
+    //     DemandeStatut ds = new DemandeStatut();
+    //     ds.setDemande(demande);
+    //     ds.setStatut(statut);
+    //     ds.setDate(demandeStatut.getDate());
+    //     ds.setObservation(demandeStatut.getObservation());
+
+    //     ds.setDureeTotal(0);
+    //     ds.setDureeTravaille(0);
+
+    //     return demandeStatutRepository.save(ds);
+    // }

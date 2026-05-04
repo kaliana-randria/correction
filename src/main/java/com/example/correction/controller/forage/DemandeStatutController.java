@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.example.correction.dto.DemandeStatutDto;
 import com.example.correction.entity.forage.DemandeStatut;
 import com.example.correction.service.forage.DemandeStatutService;
 import com.example.correction.service.forage.StatutService;
@@ -35,7 +36,8 @@ public class DemandeStatutController {
     @GetMapping("/demande-statut/historique")
     public ModelAndView listDemandeStatut() {
         ModelAndView mv = new ModelAndView("forage/demande-statut/historique");
-        List<DemandeStatut> demandeStatuts = demandeStatutService.findAll();
+        // List<DemandeStatut> demandeStatuts = demandeStatutService.findAll();
+        List<DemandeStatutDto> demandeStatuts = demandeStatutService.getTousAvecLevel();
         mv.addObject("listes", demandeStatuts);
         return mv;
     }
@@ -43,7 +45,8 @@ public class DemandeStatutController {
     @GetMapping("/demande-statut/details-historique/{id}")
     public ModelAndView listDemandeStatutDetails(@PathVariable int id) {
         ModelAndView mv = new ModelAndView("forage/demande-statut/details-historique");
-        List<DemandeStatut> demandeStatuts = demandeStatutService.getParDemande(id);
+        List<DemandeStatutDto> demandeStatuts = demandeStatutService.getAvecLevel(id);
+        // List<DemandeStatut> demandeStatuts = demandeStatutService.getParDemande(id);
         mv.addObject("listes", demandeStatuts);
         return mv;
     }
@@ -117,13 +120,13 @@ public class DemandeStatutController {
         return mv;
     }
 
-    @PostMapping("/demande-statut/modifier")
+    @PostMapping("/demande-statut/modifier-obsrvation-date")
     public ModelAndView updateClient(@ModelAttribute DemandeStatut demandeStatut,
             RedirectAttributes redirectAttributes) {
         ModelAndView mv = new ModelAndView();
 
         try {
-            demandeStatutService.save(demandeStatut);
+            demandeStatutService.updateObservationDate(demandeStatut);
             redirectAttributes.addFlashAttribute("success", "Demande Statut (Observation / date) modifiée avec succès !");
             mv.setViewName("redirect:/demande-statut/statutActuel");
 

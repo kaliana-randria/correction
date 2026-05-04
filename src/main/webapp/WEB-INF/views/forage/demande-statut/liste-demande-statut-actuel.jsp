@@ -30,6 +30,8 @@
                         <th>STATUT</th>
                         <th>DATE</th>
                         <th>OBSERVATION</th>
+                        <th>DUREE Total</th>
+                        <th>DUREE Travaille</th>
                         <th>Mettre nouveau statut</th>
                         <th>Modif Observation/date</th>
                         <th>Historique</th>
@@ -49,6 +51,8 @@
                                     <td>${demandeStatut.statut.libelle}</td>
                                     <td>${demandeStatut.date}</td>
                                     <td>${demandeStatut.observation}</td>
+                                    <td>${demandeStatut.dureeTotal} h</td>
+                                    <td>${demandeStatut.dureeTravaille} h</td>
                                     <td>
                                         <a href="${pageContext.request.contextPath}/demande-statut/form-demande-statut/${demandeStatut.id}" class="btn btn-secondary">
                                             Mettre nouveau statut

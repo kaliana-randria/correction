@@ -32,6 +32,12 @@ public class DemandeStatut {
     @Column(name = "observation")
     private String observation;
 
+    @Column(name = "duree_total")
+    private int dureeTotal;
+
+    @Column(name = "duree_travaille")
+    private int dureeTravaille;
+
     public String getObservation() {
         return observation;
     }
@@ -71,4 +77,21 @@ public class DemandeStatut {
     public void setDate(LocalDateTime date) {
         this.date = date;
     }
+
+    public int getDureeTotal() {
+        return dureeTotal;
+    }
+
+    public void setDureeTotal(int dureeTotal) {
+        this.dureeTotal = dureeTotal;
+    }
+
+    public int getDureeTravaille() {
+        return dureeTravaille;
+    }
+
+    public void setDureeTravaille(int dureeTravaille) {
+        this.dureeTravaille = dureeTravaille;
+    }
+
 }

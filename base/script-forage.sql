@@ -1,4 +1,10 @@
 TRUNCATE TABLE
+    level,
+    indicateur,
+    horaire_travail,
+    chiffre_affaire_total,
+	chiffre_affaire,
+    -- reduction,
     demande_statut,
     statut,
     devis_details,
